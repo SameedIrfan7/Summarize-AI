@@ -11,12 +11,6 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <KindeProvider
-      clientId={kindekey}
-      domain="https://articlesum.kinde.com"
-      redirectUri="http://localhost:5173"
-      logoutUri="http://localhost:5173"
-    >
       <main>
       <div className="main">
         <div className="gradient" />
@@ -28,7 +22,6 @@ const App = () => {
         <Footer />
       </div>
       </main>
-    </KindeProvider>
   );
 };
 
