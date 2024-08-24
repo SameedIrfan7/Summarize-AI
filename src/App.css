@@ -70,7 +70,6 @@
 }
 
 /* Tailwind Styles */
-
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
@@ -80,7 +79,21 @@
 }
 
 .black_btnn {
-  @apply rounded-full border bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-black hover:bg-orange-600;
+  @apply rounded-full border bg-black py-1.5 px-5 text-white transition-all hover:bg-black hover:bg-orange-600;
+}
+
+/* Additional styles for layout */
+.inline-container {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+}
+
+.inline-container button {
+  margin-right: 10px; /* Adjust space between button and paragraph */
+}
+
+.inline-container p {
+  margin: 0; /* Remove default margin */
 }
 
 .head_text {
@@ -121,7 +134,7 @@
 
 /* Custom styles for the footer */
 .footer {
-  color: #2d3748;
+  color: #ffffff;
 }
 
 .footer-top {
@@ -173,44 +186,6 @@
   text-align: center;
 }
 
-.orange_gradient {
-  @apply font-black bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
-}
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
-}
-
-
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
-}
-
-.head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
-}
-
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
-}
-
-.desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
-}
-
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
-}
-
-.head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
-}
-
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
-}
-
-.desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
+.app > *:not(:last-child) {
+  margin-bottom: 20px; /* Adjust this value to control the space between components */
 }

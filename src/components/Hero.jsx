@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { logo } from "../assets";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { login, logout, isAuthenticated, user } = useKindeAuth();
@@ -13,8 +14,10 @@ const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3 px-5">
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
+          <Link to='/'>
           <img src={logo} alt="sumz_logo" className="w-28 object-contain" />
+          </Link>
         </div>
 
         <div className="flex items-center space-x-4">
@@ -27,6 +30,41 @@ const Hero = () => {
           >
             GitHub
           </button>
+
+          <button class="btn-31">
+                 <span class="text-container">
+                    <span class="text">Button</span>
+                 </span>
+          </button> */}
+        <div className="flex items-center">
+          <Link to="/">
+            <img src={logo} alt="sumz_logo" className="w-28 object-contain" />
+          </Link>
+        </div>
+
+        <div className="flex items-center space-x-4 ">
+          <button
+            type="button"
+            onClick={() =>
+              window.open("https://github.com/SameedIrfan7", "_blank")
+            }
+            className="btn-31"
+          >
+            <span className="text-container">
+              <span className="text">GitHub</span>
+            </span>
+          </button>
+
+          {/* <button
+            className="btn-31"
+            onClick={() => {
+              // Add your onClick functionality here for Get Started button
+            }}
+          >
+            <span className="text-container">
+              <span className="text">Get Started</span>
+            </span>
+          </button> */}
 
           {isAuthenticated ? (
             <div className="relative">
@@ -46,8 +84,12 @@ const Hero = () => {
                       className="w-10 h-10 rounded-full"
                     />
                     <div>
-                      <p className="font-semibold">{user?.name || "User Name"}</p>
-                      <p className="text-sm text-gray-600">{user?.email || "user@example.com"}</p>
+                      <p className="font-semibold">
+                        {user?.name || "User Name"}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {user?.email || "user@example.com"}
+                      </p>
                     </div>
                   </div>
                   <button

@@ -3,7 +3,7 @@ import justlogo from '../assets/justlogo.svg';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-transparent text-gray-800 py-8 w-full flex flex-col items-center">
+    <footer className="footer bg-black text-white py-8 w-full flex flex-col items-center">
       <div className="w-full max-w-7xl px-6">
         <div className="footer-top flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0 md:space-x-8">
           <div className="footer-logo">
@@ -29,35 +29,35 @@ const Footer = () => {
                 className="border border-gray-300 px-2 py-1 rounded"
                 aria-label="Email"
               />
-              <button type="submit" className="black_btn">Subscribe</button>
+              <button type="submit" className="footer_btn">Subscribe</button>
             </form>
           </div>
           <div className="footer-social flex space-x-4">
             <button
               type="button"
               onClick={() => window.open("https://www.facebook.com", "_blank")}
-              className="black_btn"
+              className="footer_btn"
             >
               Facebook
             </button>
             <button
               type="button"
               onClick={() => window.open("https://www.twitter.com", "_blank")}
-              className="black_btn"
+              className="footer_btn"
             >
               Twitter
             </button>
             <button
               type="button"
               onClick={() => window.open("https://www.linkedin.com", "_blank")}
-              className="black_btn"
+              className="footer_btn"
             >
               LinkedIn
             </button>
             <button
               type="button"
               onClick={() => window.open("https://www.instagram.com", "_blank")}
-              className="black_btn"
+              className="footer_btn"
             >
               Instagram
             </button>
@@ -74,7 +74,7 @@ const Footer = () => {
             <button
               type="button"
               onClick={() => window.open("https://github.com/SameedIrfan7", "_blank")}
-              className="black_btn mt-2"
+              className="footer_btn mt-2"
             >
               GitHub
             </button>

@@ -1,29 +1,45 @@
-import Hero from "./components/Hero";
-import Demo from "./components/Demo";
-const kindekey = import.meta.env.VITE_KINDE_CLIENT_ID;
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Hero from './components/Hero';
+import Demo from './components/Demo';
+import GetStarted from './components/GetStarted';
+import ImageGallery from './components/ImageGallery';
+import Footer from './components/Footer';
 
-
-import React from "react";
-import { KindeProvider } from "@kinde-oss/kinde-auth-react";
-
-import "./App.css";
-import Footer from "./components/Footer";
+import './App.css';
+import './lobal.css';
 
 const App = () => {
-  return (
-      <main>
-      <div className="main">
-        <div className="gradient" />
-      </div>
+  const location = useLocation();
 
-      <div className="app">
-        <Hero />
-        <Demo />
-        <Footer />
-      </div>
+  return (
+    <>
+      <main className="main-content">
+        <div className="gradient"></div>
+        <div className="app">
+          <Hero />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <GetStarted />
+                <ImageGallery />
+              </>
+            } />
+            <Route path="/demo" element={
+              <Demo />
+              } />
+          </Routes>
+        </div>
       </main>
+      <Footer />
+    </>
   );
 };
 
-export default App;
-
+export default function WrappedApp() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
