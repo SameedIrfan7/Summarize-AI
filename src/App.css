@@ -189,3 +189,9 @@
 .app > *:not(:last-child) {
   margin-bottom: 20px; /* Adjust this value to control the space between components */
 }
+
+
+.visme_d {
+  margin: 20px auto; /* Example: center it and add some margin */
+  width: 100%;
+}

@@ -1,17 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Hero from './components/Hero';
 import Demo from './components/Demo';
 import GetStarted from './components/GetStarted';
 import ImageGallery from './components/ImageGallery';
 import Footer from './components/Footer';
+import VismeForm from './components/VismeForm'; // Import your component
 
 import './App.css';
 import './lobal.css';
 
 const App = () => {
-  const location = useLocation();
-
   return (
     <>
       <main className="main-content">
@@ -27,10 +26,11 @@ const App = () => {
             } />
             <Route path="/demo" element={
               <Demo />
-              } />
+            } />
           </Routes>
         </div>
       </main>
+      <VismeForm />  
       <Footer />
     </>
   );
