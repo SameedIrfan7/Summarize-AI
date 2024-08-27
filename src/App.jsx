@@ -5,7 +5,8 @@ import Demo from './components/Demo';
 import GetStarted from './components/GetStarted';
 import ImageGallery from './components/ImageGallery';
 import Footer from './components/Footer';
-import VismeForm from './components/VismeForm'; // Import your component
+import VismeForm from './components/VismeForm';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 import './App.css';
 import './lobal.css';
@@ -24,9 +25,7 @@ const App = () => {
                 <ImageGallery />
               </>
             } />
-            <Route path="/demo" element={
-              <Demo />
-            } />
+            <Route path="/demo" element={<Demo />} />
           </Routes>
         </div>
       </main>
@@ -38,8 +37,16 @@ const App = () => {
 
 export default function WrappedApp() {
   return (
-    <Router>
-      <App />
-    </Router>
+    <Auth0Provider
+    domain={import.meta.env.VITE_AUTH0_DOMAIN}
+      clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <Router>
+        <App />
+      </Router>
+    </Auth0Provider>
   );
 }

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { logo } from "../assets";
-import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const { login, logout, isAuthenticated, user } = useKindeAuth();
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,35 +14,13 @@ const Hero = () => {
   return (
     <header className="w-full flex justify-center items-center flex-col">
       <nav className="flex justify-between items-center w-full mb-10 pt-3 px-5">
-        {/* <div className="flex items-center">
-          <Link to='/'>
-          <img src={logo} alt="sumz_logo" className="w-28 object-contain" />
-          </Link>
-        </div>
-
-        <div className="flex items-center space-x-4">
-          <button
-            type="button"
-            onClick={() =>
-              window.open("https://github.com/SameedIrfan7", "_blank")
-            }
-            className="black_btn"
-          >
-            GitHub
-          </button>
-
-          <button class="btn-31">
-                 <span class="text-container">
-                    <span class="text">Button</span>
-                 </span>
-          </button> */}
         <div className="flex items-center">
           <Link to="/">
             <img src={logo} alt="sumz_logo" className="w-28 object-contain" />
           </Link>
         </div>
 
-        <div className="flex items-center space-x-4 ">
+        <div className="flex items-center space-x-4">
           <button
             type="button"
             onClick={() =>
@@ -54,17 +32,6 @@ const Hero = () => {
               <span className="text">GitHub</span>
             </span>
           </button>
-
-          {/* <button
-            className="btn-31"
-            onClick={() => {
-              // Add your onClick functionality here for Get Started button
-            }}
-          >
-            <span className="text-container">
-              <span className="text">Get Started</span>
-            </span>
-          </button> */}
 
           {isAuthenticated ? (
             <div className="relative">
@@ -93,7 +60,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <button
-                    onClick={logout}
+                    onClick={() => logout({ returnTo: window.location.origin })}
                     className="w-full text-left p-3 hover:bg-gray-100"
                   >
                     Sign Out
@@ -102,7 +69,7 @@ const Hero = () => {
               )}
             </div>
           ) : (
-            <button onClick={login} className="black_btnn font-bold">
+            <button onClick={() => loginWithRedirect()} className="black_btnn font-bold">
               Get Started
             </button>
           )}
