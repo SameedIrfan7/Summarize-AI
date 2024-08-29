@@ -3,6 +3,9 @@ import { step1, step2, step3 } from "../assets";
 
 function Steps() {
   return (
+
+
+    
     <div className="container">
       <h1>More than a tool. Summarize AI is a commitment to empowering users with concise, accurate, and insightful summaries, transforming the way you engage with content across the globe.</h1>
       <div className="cards">
