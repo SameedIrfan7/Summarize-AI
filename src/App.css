@@ -203,16 +203,18 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
-  font-family: 'Satoshi', sans-serif; /* Adjust to your preferred font-family */
-  font-size: 1rem; /* Set a base font size */
-  line-height: 1.5; /* Set a base line height */
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 80%;
+  width: 100%; /* Change width to 100% for better responsiveness */
   margin-top: 2rem;
+  gap: 1.5rem; /* Add gap between cards */
 }
 
 .card {
@@ -220,13 +222,12 @@
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-basis: 30%;
+  flex-basis: 100%; /* Default to full width for smaller screens */
   text-align: left;
-  font-family: 'Satoshi', sans-serif; /* Adjust to your preferred font-family */
-  font-size: 1rem; /* Set a base font size */
-  line-height: 1.5; /* Set a base line height */
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
 }
-
 
 .icon {
   display: flex;
@@ -252,4 +253,30 @@ h2 {
 p {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
+  
+  .card {
+    flex-basis: 30%;
+  }
+}
+
+/* Media query for larger screens like laptops and desktops */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
 }
