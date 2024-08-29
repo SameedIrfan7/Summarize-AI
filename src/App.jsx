@@ -7,9 +7,11 @@ import ImageGallery from './components/ImageGallery';
 import Footer from './components/Footer';
 import VismeForm from './components/VismeForm';
 import { Auth0Provider } from '@auth0/auth0-react';
+import Steps from './components/Steps';
 
 import './App.css';
 import './lobal.css';
+import './footer.css'
 
 const App = () => {
   return (
@@ -18,6 +20,7 @@ const App = () => {
         <div className="gradient"></div>
         <div className="app">
           <Hero />
+          <Steps />
           <Routes>
             <Route path="/" element={
               <>
