@@ -9,10 +9,10 @@ function App() {
         <h1>Sumz</h1>
         <p>Subscribe to our developer newsletter</p>
         <p>Get tips, technical guides, and best practices. Twice a month. Right in your inbox.</p>
-        <button className="step-subscribe-btn">Subscribe</button>
+        {/* <button className="step-subscribe-btn">Subscribe</button> */}
       </header>
 
-      <main className="step-main">
+      {/* <main className="step-main">
         <section className="step-section">
           <h2>Product</h2>
           <ul>
@@ -64,7 +64,7 @@ function App() {
             <li>Shop</li>
           </ul>
         </section>
-      </main>
+      </main> */}
 
       <footer className="step-footer">
         <p>© 2024 Summarize AI, Inc.</p>
@@ -72,14 +72,14 @@ function App() {
           <li>Terms</li>
           <li>Privacy (Updated 08/2022)</li>
           <li>Sitemap</li>
-          <li>What is Git?</li>
+          <li>What is Summarize AI?</li>
           <li>Manage cookies</li>
           <li>Do not share my personal information</li>
         </ul>
         <ul className="step-social-links">
-          <li><a href="https://twitter.com/github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} /></a></li>
-          <li><a href="https://www.facebook.com/github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookF} /></a></li>
-          <li><a href="https://www.linkedin.com/company/github" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
+          <li><a href="https://twitter.com/sameedirfan7" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} /></a></li>
+          <li><a href="https://www.facebook.com/#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookF} /></a></li>
+          <li><a href="https://www.linkedin.com/sameedirfan7" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
         </ul>
       </footer>
     </div>

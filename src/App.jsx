@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import Demo from './components/Demo';
 import GetStarted from './components/GetStarted';
 import ImageGallery from './components/ImageGallery';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import VismeForm from './components/VismeForm';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Steps from './components/Steps';
